@@ -5,7 +5,11 @@ var result = 'build';
 
 
 var paths = {
-    scripts: ['node_modules/angular/angular.min.js', 'src/scripts/**/*.js'],
+    scripts: [
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js',
+        'node_modules/angular/angular.min.js',
+        'src/scripts/**/*.js'],
     css: ['src/styles/*.css', 'node_modules/normalize.css/normalize.css']
 };
 

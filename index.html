@@ -41,7 +41,7 @@
                     <div class="contact-form__group">
                         <div class="contact-form__input">
                             <div class="contact-form__header--optional">Company Phone</div>
-                            <input type="text" ng-model="contact.company.address.phone">
+                            <input type="text" ng-model="contact.company.address.phone" set-mask="(000) 000-0000" placeholder="(000) 000-0000">
                         </div>
                         <div class="contact-form__input">
                             <div class="contact-form__header--optional">Company Email</div>
@@ -59,7 +59,7 @@
                     <div class="contact-form__group">
                         <div class="contact-form__input">
                             <div class="contact-form__header">Event Date</div>
-                            <input type="text" ng-model="contact.event.date">
+                            <input type="text" ng-model="contact.event.date" set-mask="00/00/0000" placeholder="mm/dd/yyyy">
                         </div>
                         <div class="contact-form__input">
                             <div class="contact-form__header"># of Attendees</div>

@@ -18,6 +18,9 @@
   "homepage": "https://github.com/kdmatrosov/contact-form#readme",
   "dependencies": {
     "angular": "^1.5.3",
+    "jquery": "^2.2.3",
+    "jquery-mask-plugin": "^1.14.0",
+    "jquery.inputmask": "^3.3.0",
     "normalize.css": "^4.1.1"
   },
   "devDependencies": {

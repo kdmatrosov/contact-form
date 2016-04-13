@@ -11,4 +11,16 @@ angular.module('contact-form.directives', [])
                 });
             }
         }
-    });
+    })
+    .directive('setMask', function () {
+        return {
+            restrict: 'A',
+            scope: {
+                setMask: '@'
+            },
+            link: function (scope, elem) {
+                elem.mask(scope.setMask);
+            }
+        }
+    })
+    ;
