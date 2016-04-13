@@ -1,3 +1,8 @@
-/**
- * Created by root on 4/13/16.
- */
+angular.module("contact-form.services", [])
+    .service('ContactFormService', function () {
+        var self = this;
+        self.saveContact = function (contact) {
+
+            return true;
+        };
+    });
