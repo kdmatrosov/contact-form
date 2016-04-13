@@ -8,63 +8,73 @@
 <body ng-app="contact-form" ng-controller="ContactFormCtrl">
     <div id="holder">
         <div class="contact-form">
-            <div class="contact-form__info-block">
-                <div class="contact-form__group">
-                    <div class="contact-form__input">
-                        <div class="contact-form__header">First Name</div>
-                        <input type="text" ng-model="contact.name.first">
-                    </div>
-                    <div class="contact-form__input">
-                        <div class="contact-form__header">Last Name</div>
-                        <input type="text" ng-model="contact.name.last">
-                    </div>
+            <div class="contact-form__main-header">
+                <div class="contact-form__name">
+                    Contact me
                 </div>
-                <div class="contact-form__group">
-                    <div class="contact-form__input">
-                        <div class="contact-form__header">Company Name</div>
-                        <input type="text" ng-model="contact.company.name">
-                    </div>
-                    <div class="contact-form__input">
-                        <div class="contact-form__header">Company Industry</div>
-                        <input type="text" ng-model="contact.company.industry">
-                    </div>
-                </div>
-                <div class="contact-form__group">
-                    <div class="contact-form__input">
-                        <div class="contact-form__header">Company Phone</div>
-                        <input type="text" ng-model="contact.company.address.phone">
-                    </div>
-                    <div class="contact-form__input">
-                        <div class="contact-form__header">Company Email</div>
-                        <input type="text" ng-model="contact.company.address.email">
-                    </div>
-                </div>
-                <div class="contact-form__group">
-                    <div class="contact-form__input--area">
-                        <div class="contact-form__header">Company Address</div>
-                        <textarea rows="2"  ng-model="contact.company.address.place" placeholder="Country, City, Street, №"></textarea>
-                    </div>
+                <div class="contact-form__tip">
+                    Required fields are marked
                 </div>
             </div>
-            <div class="contact-form__info-block">
-                <div class="contact-form__group">
-                    <div class="contact-form__input">
-                        <div class="contact-form__header">Event Date</div>
-                        <input type="text" ng-model="contact.event.date">
+            <div class="contact-form__fields">
+                <div class="contact-form__info-block">
+                    <div class="contact-form__group">
+                        <div class="contact-form__input">
+                            <div class="contact-form__header">First Name</div>
+                            <input type="text" ng-model="contact.name.first">
+                        </div>
+                        <div class="contact-form__input">
+                            <div class="contact-form__header">Last Name</div>
+                            <input type="text" ng-model="contact.name.last">
+                        </div>
                     </div>
-                    <div class="contact-form__input">
-                        <div class="contact-form__header"># of Attendees</div>
-                        <input type="text" ng-model="contact.event.attendees">
+                    <div class="contact-form__group">
+                        <div class="contact-form__input">
+                            <div class="contact-form__header">Company Name</div>
+                            <input type="text" ng-model="contact.company.name">
+                        </div>
+                        <div class="contact-form__input">
+                            <div class="contact-form__header">Company Industry</div>
+                            <input type="text" ng-model="contact.company.industry">
+                        </div>
+                    </div>
+                    <div class="contact-form__group">
+                        <div class="contact-form__input">
+                            <div class="contact-form__header--optional">Company Phone</div>
+                            <input type="text" ng-model="contact.company.address.phone">
+                        </div>
+                        <div class="contact-form__input">
+                            <div class="contact-form__header--optional">Company Email</div>
+                            <input type="text" ng-model="contact.company.address.email">
+                        </div>
+                    </div>
+                    <div class="contact-form__group">
+                        <div class="contact-form__input--area">
+                            <div class="contact-form__header">Company Address</div>
+                            <textarea rows="2"  ng-model="contact.company.address.place" placeholder="Country, City, Street, №"></textarea>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-form__group">
-                    <div class="contact-form__input--area">
-                        <div class="contact-form__header">Event Description</div>
-                        <textarea rows="4" ng-click="contact.event.description"  placeholder="Here you can more information about the upcoming event"></textarea>
+                <div class="contact-form__info-block">
+                    <div class="contact-form__group">
+                        <div class="contact-form__input">
+                            <div class="contact-form__header">Event Date</div>
+                            <input type="text" ng-model="contact.event.date">
+                        </div>
+                        <div class="contact-form__input">
+                            <div class="contact-form__header"># of Attendees</div>
+                            <input type="text" ng-model="contact.event.attendees">
+                        </div>
                     </div>
-                </div>
-                <div class="contact-form__submit">
-                    <button class="contact-form__send" ng-click="saveContact()" result-message>Send</button>
+                    <div class="contact-form__group">
+                        <div class="contact-form__input--area">
+                            <div class="contact-form__header--optional">Event Description</div>
+                            <textarea rows="4" ng-click="contact.event.description"  placeholder="Here you can add more information about the upcoming event"></textarea>
+                        </div>
+                    </div>
+                    <div class="contact-form__submit">
+                        <button class="contact-form__send" ng-click="saveContact()" result-message>Send</button>
+                    </div>
                 </div>
             </div>
         </div>

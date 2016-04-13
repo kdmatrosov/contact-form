@@ -319,26 +319,7 @@ angular.module('contact-form', [
 angular.module('contact-form.controllers', [])
     .controller('ContactFormCtrl', ['$scope', 'ContactFormService',
         function ($scope, contactFormService ) {
-            $scope.contact = {
-                name: {
-                    first: '',
-                    last: ''
-                },
-                company: {
-                    name: '',
-                    industry: '',
-                    address: {
-                        email: '',
-                        phone: '',
-                        place: ''
-                    }
-                },
-                event: {
-                    attendees: '',
-                    date: '',
-                    description: ''
-                }
-            };
+            $scope.contact = contactFormService.initNewContact();
             $scope.res = undefined;
             $scope.saveContact = function () {
                 $scope.res = contactFormService.saveContact($scope.contact);
@@ -361,6 +342,28 @@ angular.module('contact-form.directives', [])
 angular.module("contact-form.services", [])
     .service('ContactFormService', function () {
         var self = this;
+        self.initNewContact = function(){
+          return angular.copy({
+              name: {
+                  first: '',
+                  last: ''
+              },
+              company: {
+                  name: '',
+                  industry: '',
+                  address: {
+                      email: '',
+                      phone: '',
+                      place: ''
+                  }
+              },
+              event: {
+                  attendees: '',
+                  date: '',
+                  description: ''
+              }
+          });
+        };
         self.saveContact = function (contact) {
 
             return true;
