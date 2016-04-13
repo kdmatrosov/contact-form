@@ -1,0 +1,29 @@
+{
+  "name": "contact-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdmatrosov/contact-form.git"
+  },
+  "author": "Kirill Matrosov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdmatrosov/contact-form/issues"
+  },
+  "homepage": "https://github.com/kdmatrosov/contact-form#readme",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "normalize.css": "^4.1.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.1"
+  }
+}
