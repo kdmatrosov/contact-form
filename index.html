@@ -7,7 +7,7 @@
 </head>
 <body ng-app="contact-form" ng-controller="ContactFormCtrl">
     <div id="holder">
-        <div class="contact-form">
+        <form class="contact-form" name="contactForm">
             <div class="contact-form__main-header">
                 <div class="contact-form__name">
                     Contact me
@@ -21,49 +21,49 @@
                     <div class="contact-form__group">
                         <div class="contact-form__input">
                             <div class="contact-form__header">First Name</div>
-                            <input type="text" ng-model="contact.name.first">
+                            <input type="text" ng-model="contact.name.first" required>
                         </div>
                         <div class="contact-form__input">
                             <div class="contact-form__header">Last Name</div>
-                            <input type="text" ng-model="contact.name.last">
+                            <input type="text" ng-model="contact.name.last" required>
                         </div>
                     </div>
                     <div class="contact-form__group">
                         <div class="contact-form__input">
                             <div class="contact-form__header">Company Name</div>
-                            <input type="text" ng-model="contact.company.name">
+                            <input type="text" ng-model="contact.company.name" required>
                         </div>
                         <div class="contact-form__input">
                             <div class="contact-form__header">Company Industry</div>
-                            <input type="text" ng-model="contact.company.industry">
+                            <input type="text" ng-model="contact.company.industry" required>
                         </div>
                     </div>
                     <div class="contact-form__group">
-                        <div class="contact-form__input">
+                        <div class="contact-form__input"  valid="phone">
                             <div class="contact-form__header--optional">Company Phone</div>
                             <input type="text" ng-model="contact.company.address.phone" set-mask="(000) 000-0000" placeholder="(000) 000-0000">
                         </div>
-                        <div class="contact-form__input">
+                        <div class="contact-form__input"  valid="email">
                             <div class="contact-form__header--optional">Company Email</div>
-                            <input type="text" ng-model="contact.company.address.email">
+                            <input type="text" ng-model="contact.company.address.email" placeholder="example@email.com">
                         </div>
                     </div>
                     <div class="contact-form__group">
                         <div class="contact-form__input--area">
                             <div class="contact-form__header">Company Address</div>
-                            <textarea rows="2"  ng-model="contact.company.address.place" placeholder="Country, City, Street, №"></textarea>
+                            <textarea rows="2"  ng-model="contact.company.address.place" placeholder="Country, City, Street, №" required></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form__info-block">
                     <div class="contact-form__group">
-                        <div class="contact-form__input">
+                        <div class="contact-form__input" valid="date">
                             <div class="contact-form__header">Event Date</div>
-                            <input type="text" ng-model="contact.event.date" set-mask="00/00/0000" placeholder="mm/dd/yyyy">
+                            <input type="text" ng-model="contact.event.date" set-mask="00/00/0000" placeholder="mm/dd/yyyy" required class="--short">
                         </div>
                         <div class="contact-form__input">
-                            <div class="contact-form__header"># of Attendees</div>
-                            <input type="text" ng-model="contact.event.attendees">
+                            <div class="contact-form__header--optional"># of Attendees <span class="contact-form__headerTip">(0 - no limit of participants)</span></div>
+                            <input type="text" ng-model="contact.event.attendees" format-number="0" class="--short" placeholder="0">
                         </div>
                     </div>
                     <div class="contact-form__group">
@@ -73,11 +73,12 @@
                         </div>
                     </div>
                     <div class="contact-form__submit">
-                        <button class="contact-form__send" ng-click="saveContact()" result-message>Send</button>
+                        <button class="contact-form__reset" ng-click="resetContact()" type="reset">Reset</button>
+                        <button class="contact-form__send"  ng-click="saveContact(contactForm.$valid)" result-message>Send</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
     <script src="build/app.js"></script>
 </body>
